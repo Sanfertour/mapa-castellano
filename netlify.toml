@@ -1,0 +1,6 @@
+[[headers]]
+  for = "/*" # Aplica estas cabeceras a todas las rutas de este sitio de Netlify
+  [headers.values]
+    # Permite la geolocalización para este propio dominio (self)
+    # y para el dominio de tu aplicación principal (bucolic-concha-b3e289.netlify.app)
+    Permissions-Policy = "geolocation=(self 'https://bucolic-concha-b3e289.netlify.app')"
