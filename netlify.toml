@@ -1,6 +1,7 @@
 [[headers]]
-  for = "/*" # Aplica estas cabeceras a todas las rutas de este sitio de Netlify
+  for = "/*" # Aplica estas cabeceras a todas las rutas de este sitio de Netlify (el mapa)
   [headers.values]
     # Permite la geolocalización para este propio dominio (self)
-    # y para el dominio de tu aplicación principal (bucolic-concha-b3e289.netlify.app)
+    # Y lo importante: permite que el acceso a la geolocalización se otorgue si el iframe es cargado
+    # por el dominio de tu aplicación principal (bucolic-concha-b3e289.netlify.app)
     Permissions-Policy = "geolocation=(self 'https://bucolic-concha-b3e289.netlify.app')"
