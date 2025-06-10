@@ -1,12 +1,12 @@
 [[headers]]
-  for = "/*"
+  for = "/*" # Aplica estas cabeceras a todas las rutas de este sitio de Netlify (el mapa)
   [headers.values]
-    # Permite la geolocalización para 'self' (el propio dominio del mapa)
-    # y si el iframe es cargado desde el dominio de tu aplicación principal.
-    # Usamos comillas dobles para la URL, lo cual a veces es más robusto en TOML.
-    Permissions-Policy = "geolocation=(self \"https://bucolic-concha-b3e289.netlify.app\")"
-    # Opcional: También permitir otros sensores si Leaflet los intenta usar
-    accelerometer = "(self \"https://bucolic-concha-b3e289.netlify.app\")"
-    gyroscope = "(self \"https://bucolic-concha-b3e289.netlify.app\")"
-    magnetometer = "(self \"https://bucolic-concha-b3e289.netlify.app\")"
-    device-orientation = "(self \"https://bucolic-concha-b3e289.netlify.app\")"
+    # Esta política permite la geolocalización para el propio dominio del mapa ('self')
+    # Y lo más importante: permite que la geolocalización se use si el iframe es cargado
+    # por CUALQUIER origen ('*'). Esta es la política más permisiva para iframes.
+    Permissions-Policy = "geolocation=(self *)"
+    # Añadimos también las políticas para los sensores de movimiento, ya que la consola los menciona.
+    accelerometer = "(self *)"
+    gyroscope = "(self *)"
+    magnetometer = "(self *)"
+    device-orientation = "(self *)"
