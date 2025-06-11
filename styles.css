@@ -14,13 +14,3 @@ html, body {
   position: relative; /* Asegura el contexto para el fixed si se necesita */
 }
 
-iframe {
-  border: none !important; /* ¡Importante! Elimina el borde */
-  position: fixed !important; /* ¡Importante! Lo fija al viewport */
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important; /* ¡Importante! 100% del ancho del viewport */
-  height: 100vh !important; /* ¡Importante! 100% de la altura del viewport */
-  z-index: 9999 !important; /* ¡Importante! Sobre todo lo demás */
-  display: block;
-}
