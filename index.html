@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sanfertour</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
+<style>
         html, body {
             margin: 0;
             padding: 0;
-            /* Usamos flexbox para centrar el contenido */
-            display: flex;
-            justify-content: center; /* Centra el iframe horizontalmente */
-            align-items: center; /* Centra el iframe verticalmente, si el body es 100vh */
-            min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
-            background-color: #f0f0f0; /* Fondo suave para mejor visualización */
+            /* Elimina display: flex, justify-content, align-items,
+               ya que queremos que el iframe ocupe todo el espacio, no centrarse */
+            height: 100%; /* Asegura que html y body ocupen el 100% de la altura del viewport de este frame */
+            width: 100%; /* Asegura que html y body ocupen el 100% del ancho del viewport de este frame */
+            overflow: hidden; /* Evita barras de desplazamiento innecesarias */
+            background-color: #f0f0f0; /* Solo para visualización, si lo necesitas */
         }
 
         iframe {
             border: none;
-            width: 90%; /* Ocupa el 90% del ancho del contenedor */
-            max-width: 900px; /* **Establece un ancho máximo de 900px** */
-            height: 80vh; /* Ocupa el 80% de la altura visible del dispositivo */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Añade una sombra sutil */
-            border-radius: 8px; /* Bordes ligeramente redondeados */
+            width: 100%; /* ¡AHORA SÍ, 100% del ancho del padre! */
+            height: 100%; /* ¡AHORA SÍ, 100% de la altura del padre! */
+            /* Puedes mantener el box-shadow y border-radius si quieres un efecto visual dentro del iframe */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            /* Elimina max-width: 900px; ya que el iframe padre lo controlará mejor */
         }
     </style>
 </head>
